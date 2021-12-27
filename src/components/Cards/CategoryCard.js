@@ -1,5 +1,12 @@
 import React from 'react';
-import {TouchableOpacity, Image, StyleSheet, Text, View} from 'react-native';
+import {
+  TouchableOpacity,
+  Image,
+  StyleSheet,
+  Text,
+  View,
+  Platform,
+} from 'react-native';
 import {HP, WP} from '../../services/responsive';
 import {Colors} from '../../utils';
 
@@ -29,7 +36,14 @@ const styles = StyleSheet.create({
     marginBottom: HP(5),
     alignItems: 'center',
     overflow: 'hidden',
-    height: HP(25),
+    ...Platform.select({
+      android: {
+        height: HP(32),
+      },
+      ios: {
+        height: HP(25),
+      },
+    }),
     width: '100%',
     borderWidth: 0.4,
     borderRadius: WP(5),

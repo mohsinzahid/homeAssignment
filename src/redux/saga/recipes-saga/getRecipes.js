@@ -9,6 +9,7 @@ function* getRecipes(params) {
   try {
     let recipes = {};
     let categories = {};
+    console.log('friestore');
 
     yield firestore()
       .collection('homeAssignment')
@@ -17,7 +18,9 @@ function* getRecipes(params) {
       .then(querySnapshot => {
         recipes = querySnapshot?._data;
       })
-      .catch(error => {});
+      .catch(error => {
+        console.log(error);
+      });
 
     yield firestore()
       .collection('homeAssignment')

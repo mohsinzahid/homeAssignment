@@ -4,8 +4,9 @@ import {HP, WP} from '../../../services/responsive';
 
 export default StyleSheet.create({
   container: {
-    height: HP(100),
+    flex: 1,
     backgroundColor: Colors.background,
+    paddingBottom: HP(2),
   },
   wrapper: {
     height: HP(25),
